@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label,input{
+        font-size:20px;}
+        table,th{
+        padding:20px;}
+        th,td {border:1px solid white;}
+    </style>
+</head>
+<body style="background-color:PowderBlue;">
+<h2 style="color:mattblack;text-align:center;"> Registration </h2>
+<form action="register" method="POST">
+    {% csrf_token %}
+    <table style="width:100%;align:center;">
+    <tr>
+        <th><label>Name</label></th>
+        <th><input type="text" name="username" ></th>
+    </tr>
+    <tr>
+        <th><label>First name</label></th>
+        <th><input type="text" name="first_name"></th>
+    </tr>
+    <tr>
+        <th><label>Last name</label></th>
+        <th><input type="text" name="last_name"></th>
+    </tr>
+    <tr>
+        <th><label>Email</label></th>
+        <th><input type="email" name="email"></th>
+    </tr>
+    <tr>
+        <th><label>Password</label></th>
+        <th><input type="password" name="password"></th>
+    </tr>
+    <tr>
+        <th><label>Re enter password</label></th>
+        <th><input type="password" name="password1"></th>
+    </tr>
+    <tr>
+        <th> </th>
+        <th><input type="submit"></th>
+    </tr>
+    </table>
+<!--    <label>username</label>&nbsp;-->
+<!--    <input type="text" name="username" placeholder="Enter your name"><br>-->
+<!--    <input type="text" name="first_name" placeholder="Enter your first name"><br>-->
+<!--    <input type="text" name="last_name" placeholder="Enter your last name"><br>-->
+<!--    <input type="email" name="email" placeholder="Enter your mailid"><br>-->
+<!--    <input type="password" name="password" placeholder="Enter your password"><br>-->
+<!--    <input type="password" name="password1" placeholder="confirm your password"><br>-->
+<!--    <input type="submit">-->
+
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
